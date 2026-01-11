@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Muzayyana Beauty — Tabiiy soch va qosh parvarishi</title>
+    <meta name="description"
+        content="Muzayyana Beauty — 100% tabiiy soch spreyi, qosh va kiprik yog‘i hamda bosh massaj cho‘tkasi. Tabiiy parvarish va real natijalar.">
+    <meta name="keywords"
+        content="muzayyana beauty, soch spreyi, tabiiy kosmetika, qosh yog'i, kiprik yog'i, soch to'kilishi, bosh massaj cho'tkasi">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="XXXXXXX">
+    <!-- Google font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS scroll animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #2f5d50;
+            --light: #faf7f2;
+            --accent: #c8a35f;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: #333;
+        }
+
+        /* HEADER */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 16px 60px;
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .header-left {
+            font-weight: 600;
+        }
+
+        .header-center {
+            text-align: center;
+        }
+
+        .header-center img {
+            height: 85px;
+        }
+
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 22px;
+        }
+
+        .header-right a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+            position: relative;
+        }
+
+        .header-right a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green);
+            transition: .3s;
+        }
+
+        .header-right a:hover::after {
+            width: 100%;
+        }
+
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            padding: 90px 80px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--green);
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 20px 0 30px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .hero a:hover {
+            background: #24483e;
+            transform: translateY(-2px);
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .15);
+        }
+
+        /* PRODUCTS */
+        .products {
+            padding: 80px;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 18px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--green);
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        /* FEATURES (FAQ o‘rniga) */
+        .features {
+            padding: 90px 80px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features img {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        .icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .icon-card {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1f3d34;
+            color: #fff;
+            padding: 60px 80px;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                row-gap: 14px;
+                padding: 14px 18px;
+                text-align: center;
+            }
+
+            .header-left {
+                order: 2;
+                font-size: 14px;
+                opacity: .85;
+            }
+
+            .header-center {
+                order: 1;
+            }
+
+            .header-center img {
+                height: 78px;
+            }
+
+            .header-right {
+                order: 3;
+                justify-content: center;
+                gap: 26px;
+            }
+
+            .header-right a {
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            /* Hero premium spacing */
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+
+
+        @media(max-width:900px) {
+
+            .hero,
+            .features {
+                grid-template-columns: 1fr;
+                padding: 60px 30px;
+            }
+
+            header {
+                padding: 15px 25px
+            }
+
+            .products {
+                padding: 60px 30px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <span class="phone">+998 (94) 091 51 05</span>
+        </div>
+
+        <div class="header-center">
+            <img src="img/logo.png" alt="Muzayyana Beauty">
+        </div>
+
+        <div class="header-right">
+            <a href="#products">Mahsulotlar</a>
+            <a href="https://t.me/muzayyana_beauty">Telegram</a>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div data-aos="fade-right">
+            <h1>Muzayyana Beauty</h1>
+            <p>100% tabiiy mahsulotlar bilan soch, qosh va kiprik parvarishi. Sog‘lomlik va go‘zallik bir joyda.</p>
+            <a href="https://t.me/Muzayyana_admin">Buyurtma berish</a>
+        </div>
+        <img src="img/hero.jpg" data-aos="fade-left">
+    </section>
+
+    <section class="products" id="products">
+        <h2 data-aos="fade-up">Mahsulotlarimiz</h2>
+        <div class="grid">
+            <div class="card" data-aos="zoom-in">
+                <img src="img/spray.jpg">
+                <h3>Sprey</h3>
+                <p>Soch to‘kilishini kamaytiradi, qazg‘oqdan xalos qiladi va o‘sishni tezlashtiradi.</p>
+                <div class="price">80 000 so‘m</div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <img src="img/oil.jpg">
+                <h3>Qosh & Kiprik yog‘i</h3>
+                <p>Qalin va uzun kipriklar uchun tabiiy yog‘lar majmuasi.</p>
+                <div class="price">45 000 so‘m</div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <img src="img/brush.jpg">
+                <h3>Bosh massaj cho‘tkasi</h3>
+                <p>Qon aylanishini yaxshilaydi va soch ildizlarini mustahkamlaydi.</p>
+                <div class="price">35 000 so‘m</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <img src="img/feature.jpg" data-aos="fade-right">
+        <div class="icons" data-aos="fade-left">
+            <div class="icon-card">
+                <div class="icon">✓</div>
+                <div>Sovuq usulda tayyorlangan</div>
+            </div>
+            <div class="icon-card">
+                <div class="icon">✓</div>
+                <div>100% tabiiy tarkib</div>
+            </div>
+            <div class="icon-card">
+                <div class="icon">✓</div>
+                <div>O‘z texnologiyamiz</div>
+            </div>
+            <div class="icon-card">
+                <div class="icon">✓</div>
+                <div>Yuqori natija</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Muzayyana Beauty</h3>
+        <a href="https://t.me/muzayyana_beauty">Telegram kanal</a>
+        <a href="https://t.me/muzayyana_otziv">Natijalar & Otzivlar</a>
+        <a href="https://t.me/Muzayyana_admin">Buyurtma</a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 900, once: true });</script>
+
+</body>
+
+</html>
